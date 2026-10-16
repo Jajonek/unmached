@@ -1,59 +1,16 @@
-name: Build Android APK
+[app]
 
-on:
-  push:
-    branches: [ main ]
+# (str) Title of your application
+title = Moja Gra Voxel
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# (str) Package name
+package.name = voxelgame
 
-    steps:
-    - uses: actions/checkout@v4
+# (str) Package domain (needed for android packaging)
+package.domain = org.test
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+# (list) Source files (relative to your directory)
+source.include_exts = py,png,jpg,kv,atlas
 
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          python3-pip \
-          build-essential \
-          git \
-          python3-dev \
-          ffmpeg \
-          libsdl2-dev \
-          libsdl2-image-dev \
-          libsdl2-mixer-dev \
-          libsdl2-ttf-dev \
-          libportmidi-dev \
-          libswscale-dev \
-          libavformat-dev \
-          libavcodec-dev \
-          zlib1g-dev \
-          libncurses5-dev \
-          libncursesw5-dev \
-          libtinfo6 \
-          cmake \
-          libffi-dev \
-          libssl-dev \
-          autoconf \
-          libtool \
-          pkg-config
-
-    - name: Install Buildozer and Cython
-      run: |
-        pip install --upgrade pip
-        pip install --upgrade buildozer cython
-
-    - name: Build with Buildozer
-      run: buildozer -v android debug
-
-    - name: Upload APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: package
-        path: bin/*.apk
+# (list) Application requirements
+requirements = python3,kivy
