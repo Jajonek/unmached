@@ -52,7 +52,9 @@ jobs:
         pip install buildozer
 
     - name: Build with Buildozer
-      run: buildozer -v android debug
+      run: |
+        unset ANDROID_NDK_ROOT
+        buildozer -v android debug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
