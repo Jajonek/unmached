@@ -25,10 +25,9 @@ source.exclude_dirs = tests, bin, .git, .github
 version = 0.1
 
 # (list) Application requirements
-# Dla Pygame wymagane są komponenty python3, pygame (lub python3,kivy dla Kivy)
 requirements = python3,pygame
 
-# (str) Bootstrap to use (sdl2 dla Pygame / Kivy)
+# (str) Bootstrap to use (sdl2 dla Pygame)
 p4a.bootstrap = sdl2
 
 # (list) Permissions
@@ -39,9 +38,6 @@ android.api = 33
 
 # (int) Minimum API supported
 android.min_api = 21
-
-# (str) Android NDK version
-android.ndk = 25b
 
 # (bool) Accept Android SDK license
 android.accept_sdk_license = True
@@ -56,6 +52,3 @@ fullscreen = 1
 
 # (int) Log level (2 = debug with command output)
 log_level = 2
-
-# (int) Display warning if buildozer is run as root
-warn_on_root = 1
