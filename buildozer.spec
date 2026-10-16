@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = Moja Gra Voxel
+title = Unmached
 
 # (str) Package name
 package.name = voxelgame
@@ -9,52 +9,53 @@ package.name = voxelgame
 # (str) Package domain (needed for android packaging)
 package.domain = org.test
 
-# (str) Source file where the main entry point of your application resides
+# (str) Source directory
 source.dir = .
 
-# (list) Source files to include (let it include py and other assets)
-source.include_exts = py,png,jpg,kv,atlas,ttf
+# (list) Source files extensions to include
+source.include_exts = py,png,jpg,kv,atlas,ttf,wav,ogg
 
-# (list) List of inclusions using pattern matching
-source.include_patterns = assets/*,images/*
-
-# (list) Source files to exclude (let's empty it)
+# (list) Source files to exclude
 source.exclude_exts = spec
 
 # (list) List of directory to exclude
 source.exclude_dirs = tests, bin, .git, .github
 
-# (str) Application versioning (method 1)
+# (str) Application versioning
 version = 0.1
 
 # (list) Application requirements
-requirements = python3,pygame,sdl2_image,sdl2_mixer,sdl2_ttf,sdl2
+# Dla Pygame wymagane są komponenty python3, pygame (lub python3,kivy dla Kivy)
+requirements = python3,pygame
+
+# (str) Bootstrap to use (sdl2 dla Pygame / Kivy)
+p4a.bootstrap = sdl2
 
 # (list) Permissions
 android.permissions = INTERNET
 
-# (int) Target Android API, should be as high as possible.
+# (int) Target Android API
 android.api = 33
 
-# (int) Minimum API your APK will support.
+# (int) Minimum API supported
 android.min_api = 21
 
-# (str) Android NDK version to use (stabilna wersja naprawiająca błędy kompilacji)
+# (str) Android NDK version
 android.ndk = 25b
 
-# (bool) Indicate whether you accept the Android SDK license
+# (bool) Accept Android SDK license
 android.accept_sdk_license = True
 
 # (str) Supported orientations
 orientation = landscape
 
-# (bool) Indicate if the application should be fullscreen
+# (bool) Fullscreen
 fullscreen = 1
 
 [buildozer]
 
-# (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
+# (int) Log level (2 = debug with command output)
 log_level = 2
 
-# (int) Display warning if buildozer is run as root (0 = False, 1 = Bool)
+# (int) Display warning if buildozer is run as root
 warn_on_root = 1
