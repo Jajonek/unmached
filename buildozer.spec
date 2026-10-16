@@ -28,11 +28,7 @@ source.exclude_dirs = tests, bin, .git, .github
 version = 0.1
 
 # (list) Application requirements
-# Jeśli Twoja gra używa Pygame, upewnij się, że masz tu odpowiednie biblioteki (np. python3, pygame)
 requirements = python3,pygame,sdl2_image,sdl2_mixer,sdl2_ttf,sdl2
-
-# (str) Custom source folders for requirements
-#requirements.source.kivy = ../../kivy
 
 # (list) Permissions
 android.permissions = INTERNET
@@ -42,6 +38,9 @@ android.api = 33
 
 # (int) Minimum API your APK will support.
 android.min_api = 21
+
+# (str) Android NDK version to use (stabilna wersja naprawiająca błędy kompilacji)
+android.ndk = 25b
 
 # (bool) Indicate whether you accept the Android SDK license
 android.accept_sdk_license = True
